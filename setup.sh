@@ -41,7 +41,7 @@ fi
 
 # 3. Применение параметров ядра для исправления сна
 echo "💤 Настройка параметров ядра (Fix Sleep & SSD)..."
-PARAMS="nvme.noacpi=1 pcie_aspm=off nvme_core.default_ps_max_latency_us=0 amd_iommu=off amdgpu.sg_display=0 amdgpu.dcdebugmask=0x10"
+PARAMS="amd_iommu=off iommu=soft amdgpu.dcdebugmask=0x110 amdgpu.sg_display=0 nvme.noacpi=1 acpi_osi=\"Windows 2020\" pcie_aspm=off nvme_core.default_ps_max_latency_us=0"
 
 # Определение загрузчика и применение
 if [ -f /etc/default/grub ]; then
